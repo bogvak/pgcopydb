@@ -382,7 +382,7 @@ pg_dump_db(PostgresPaths *pgPaths,
 		args[argsIndex++] = (char *) snapshot;
 	}
 	
-	if noGrants
+	if (noGrants)
 	{
 		args[argsIndex++] = "-Ft";	
 	}
