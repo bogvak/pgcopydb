@@ -345,7 +345,9 @@ pg_dump_db(PostgresPaths *pgPaths,
 		   const char *section,
 		   SourceFilters *filters,
 		   SourceExtensionArray *extensionArray,
-		   const char *filename)
+		   const char *filename,
+		   bool noGrants
+		   )
 {
 	char *args[PG_CMD_MAX_ARG];
 	int argsIndex = 0;
@@ -378,6 +380,11 @@ pg_dump_db(PostgresPaths *pgPaths,
 	{
 		args[argsIndex++] = "--snapshot";
 		args[argsIndex++] = (char *) snapshot;
+	}
+	
+	if noGrants
+	{
+		args[argsIndex++] = "-Ft";	
 	}
 
 	args[argsIndex++] = "--section";

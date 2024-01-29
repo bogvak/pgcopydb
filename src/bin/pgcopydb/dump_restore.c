@@ -74,7 +74,9 @@ copydb_dump_source_schema(CopyDataSpec *specs,
 							 "pre-data",
 							 &(specs->filters),
 							 extensionArray,
-							 specs->dumpPaths.preFilename))
+							 specs->dumpPaths.preFilename,
+							 specs->noGrants
+							 ))
 		{
 			/* errors have already been logged */
 			return false;
@@ -105,7 +107,8 @@ copydb_dump_source_schema(CopyDataSpec *specs,
 							 "post-data",
 							 &(specs->filters),
 							 extensionArray,
-							 specs->dumpPaths.postFilename))
+							 specs->dumpPaths.postFilename,
+							 specs->noGrants))
 		{
 			/* errors have already been logged */
 			return false;

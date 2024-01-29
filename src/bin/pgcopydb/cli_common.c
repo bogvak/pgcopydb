@@ -711,6 +711,7 @@ cli_copy_db_getopts(int argc, char **argv)
 		{ "drop-if-exists", no_argument, NULL, 'c' }, /* pg_restore -c */
 		{ "roles", no_argument, NULL, 'A' },          /* pg_dumpall --roles-only */
 		{ "no-role-passwords", no_argument, NULL, 'P' },
+		{ "no-grant", no_argument, NULL, 'G' }, /* pg_dump -Ft */
 		{ "no-owner", no_argument, NULL, 'O' },       /* pg_restore -O */
 		{ "no-comments", no_argument, NULL, 'X' },
 		{ "no-acl", no_argument, NULL, 'x' }, /* pg_restore -x */
@@ -876,6 +877,13 @@ cli_copy_db_getopts(int argc, char **argv)
 			{
 				options.noRolesPasswords = true;
 				log_trace("--no-role-passwords");
+				break;
+			}
+			
+			case 'G':
+			{
+				options.noGrants = true;
+				log_trace("--no-grant");
 				break;
 			}
 

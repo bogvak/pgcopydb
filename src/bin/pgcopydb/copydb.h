@@ -258,6 +258,7 @@ typedef struct CopyDataSpec
 	bool skipCollations;
 	bool skipVacuum;
 	bool noRolesPasswords;
+	bool noGrants;
 
 	bool restart;
 	bool resume;

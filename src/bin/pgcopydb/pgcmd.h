@@ -203,7 +203,8 @@ bool pg_dump_db(PostgresPaths *pgPaths,
 				const char *section,
 				SourceFilters *filters,
 				SourceExtensionArray *extensionArray,
-				const char *filename);
+				const char *filename,
+		   		bool noGrants);
 
 bool pg_dumpall_roles(PostgresPaths *pgPaths,
 					  ConnStrings *connStrings,
