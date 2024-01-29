@@ -703,6 +703,7 @@ copydb_init_specs(CopyDataSpec *specs,
 		.skipCollations = options->skipCollations,
 		.skipVacuum = options->skipVacuum,
 		.noRolesPasswords = options->noRolesPasswords,
+		.noGrants = options->noGrants,
 		.failFast = options->failFast,
 
 		.restart = options->restart,
