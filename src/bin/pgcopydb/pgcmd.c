@@ -384,7 +384,8 @@ pg_dump_db(PostgresPaths *pgPaths,
 	
 	if (noGrants)
 	{
-		args[argsIndex++] = "-Ft";	
+		args[argsIndex++] = "-x";	
+		args[argsIndex++] = "-O";	
 	}
 
 	args[argsIndex++] = "--section";
